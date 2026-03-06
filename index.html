@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="bn">
+          <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>ঋতুরাগ ২০২৬</title>
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;500;700&display=swap"
+                              rel="stylesheet">
+                    <link rel="stylesheet"
+                              href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+                    <link rel="stylesheet" href="style.css">
+          </head>
+          
+          <body>
+                    <div id="notification" class="notification-banner">
+                              <span>🔔</span> <span id="notif-text">আজকের রিমাইন্ডার লোড হচ্ছে...</span>
+                    </div>
+                    <div class="menu-icon" onclick="toggleMenu()">☰ ঋতুরাগ ২০২৬ বিশেষ দিনসমূহ</div>
+                    <div id="side-menu" class="side-menu">
+                              <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">
+                                        <span class="material-symbols-outlined">close</span>
+                              </a>
+                              <h3>📅 ছুটির তালিকা</h3>
+                              <ul id="holiday-list"></ul>
+                    </div>
+                    <div class="calendar-card">
+                              <div class="header">
+                                        <button class="nav-btn" onclick="changeMonth(-1)">❮</button>
+                                        <h2 id="month-year"></h2>
+                                        <button class="nav-btn" onclick="changeMonth(1)">❯</button>
+                              </div>
+                              <div class="days-grid" id="days-container"></div>
+                              <div class="info-panel">
+                                        <div id="weather-info">🌤️ আবহাওয়া লোড হচ্ছে...</div>
+                                        <div id="season-name"></div>
+                                        <div id="clock">00:00:00</div>
+                              </div>
+                    </div>
+                    <div class="music-controls">
+                              <button id="mute-btn" onclick="toggleMute()">
+                                        <span class="material-symbols-outlined" id="volume-icon">volume_up</span>
+                              </button>
+                              <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5"
+                                        oninput="changeVolume(this.value)">
+                    </div>
+                    <div id="event-modal" class="modal">
+                              <div class="modal-content">
+                                        <span class="close-modal" onclick="closeModal()">
+                                                  <span class="material-symbols-outlined">close</span>
+                                        </span>
+                                        <h3 id="selected-date-text">তারিখ নির্বাচন করুন</h3>
+                                        <input type="text" id="event-input" placeholder="আপনার কাজের নাম লিখুন...">
+                                        <button class="save-btn" onclick="saveEvent()">সেভ করুন</button>
+                              </div>
+                    </div>
+                    <script src="script.js"></script>
+          </body>
+</html>
